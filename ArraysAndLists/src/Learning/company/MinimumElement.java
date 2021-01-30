@@ -34,7 +34,7 @@ public class MinimumElement {
 
     /**
      * Checks the elements for minimum.
-     * @param array of the elements that were entered by user.
+     * @param array array of the elements that were entered by user.
      * @return the minimum value in the array.
      */
     public static int findMin(int[] array) {
