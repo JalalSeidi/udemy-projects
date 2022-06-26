@@ -1,4 +1,4 @@
-package Learning.company;
+package com.jalalseidi.udemy.basicjava.exercise30;
 
 public class Main {
 
