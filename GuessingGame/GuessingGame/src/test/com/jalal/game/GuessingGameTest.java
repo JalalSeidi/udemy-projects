@@ -36,8 +36,18 @@ public class GuessingGameTest {
 
   @Test
   public void testRandomNumberGeneration() {
-    int randomNum = game.getRandomNum();
-    String message = game.guess(randomNum + 1);
-    assertEquals("You didn't get it", message);
+
+    int[] rndNumCount = new int[11];
+    for (int counter = 0; counter < 100; counter++) {
+      int randomNum = game.getRandomNum();
+      rndNumCount[randomNum] = 1;
+    }
+
+    int sum = 0;
+    for (int counter = 0; counter < 11; counter++) {
+      sum += rndNumCount[counter];
+    }
+
+    assertEquals(10, sum);
   }
 }
