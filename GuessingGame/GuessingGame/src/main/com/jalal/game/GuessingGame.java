@@ -7,14 +7,18 @@ public class GuessingGame {
   private int counter = 0;
   public String guess(int guessedNumber) {
     counter++;
-    if (counter == 4 && guessedNumber != getRandomNum()) {
-      return "You didn't get it and you've had four tries. Game over.";
-    }
     String tryText = counter == 1 ? "try" : "tries";
     String winningMsg = String.format("You got it in %d %s", counter, tryText);
-    return guessedNumber == getRandomNum() ? winningMsg : "You didn't get it";
+    String response = null;
+    if (counter == 4 && guessedNumber != getRandomNum()) {
+      response = String.format("You didn't get it and you've had %d %s. Game over.", counter, tryText);
+    } else if (counter > 4) {
+      response = "Sorry, you are limited to 4 tries. Your game is over.";
+    } else {
+      response = guessedNumber == getRandomNum() ? winningMsg : "You didn't get it";
+    }
+    return response;
   }
-
   public int getRandomNum() {
     return randomNumber;
   }
