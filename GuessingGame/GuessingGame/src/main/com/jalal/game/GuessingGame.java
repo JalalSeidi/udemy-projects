@@ -15,7 +15,16 @@ public class GuessingGame {
     } else if (counter > 4) {
       response = "Sorry, you are limited to 4 tries. Your game is over.";
     } else {
-      response = guessedNumber == getRandomNum() ? winningMsg : "You didn't get it";
+      String tooHighLowText = null;
+      if (guessedNumber < getRandomNum()) {
+        tooHighLowText = "- you're too low";
+      } else if (guessedNumber > getRandomNum()) {
+        tooHighLowText = "- you're too high";
+      } else {
+        tooHighLowText = "";
+      }
+      String loseText = String.format("You didn't get it %s", tooHighLowText).trim();
+      response = guessedNumber == getRandomNum() ? winningMsg : loseText;
     }
     return response;
   }
