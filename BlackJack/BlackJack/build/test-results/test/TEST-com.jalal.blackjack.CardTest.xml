@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jalal.blackjack.CardTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-12-21T22:06:03" hostname="DESKTOP-UP5IN2O" time="0.037">
+  <properties/>
+  <testcase name="canGetValueOfAThreeCard()" classname="com.jalal.blackjack.CardTest" time="0.032"/>
+  <testcase name="canGetValueOfATwoCard()" classname="com.jalal.blackjack.CardTest" time="0.001"/>
+  <testcase name="canGetValueOfAnAceCard()" classname="com.jalal.blackjack.CardTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

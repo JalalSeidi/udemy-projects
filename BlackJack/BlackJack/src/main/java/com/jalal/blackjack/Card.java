@@ -29,4 +29,8 @@ public class Card {
     Card card1 = new Card(Suit.CLUBS, Rank.JACK);
     Card card2 = new Card(Suit.DIAMONDS, Rank.TEN);
   }
+
+  public int getValue() {
+    return this.rank.ordinal() + 1;
+  }
 }
