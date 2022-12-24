@@ -29,11 +29,8 @@ public class Card {
     Card card1 = new Card(Suit.CLUBS, Rank.JACK);
     Card card2 = new Card(Suit.DIAMONDS, Rank.TEN);
   }
-
   public int getValue() {
-    return switch (this.rank) {
-      case JACK, QUEEN, KING -> 10;
-      default -> this.rank.ordinal() + 1;
-    };
+    return this.rank.getValue();
   }
+
 }

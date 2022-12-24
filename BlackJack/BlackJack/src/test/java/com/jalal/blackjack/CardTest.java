@@ -34,4 +34,6 @@ class CardTest {
     Card card1 = new Card(Suit.DIAMONDS, Rank.KING);
     assertEquals(10, card1.getValue());
   }
+
+
 }
