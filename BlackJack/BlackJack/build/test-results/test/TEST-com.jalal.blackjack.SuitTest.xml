@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jalal.blackjack.SuitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-25T23:23:22" hostname="DESKTOP-UP5IN2O" time="0.033">
+<testsuite name="com.jalal.blackjack.SuitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-26T15:39:25" hostname="DESKTOP-UP5IN2O" time="0.053">
   <properties/>
-  <testcase name="heartPrintsHeart()" classname="com.jalal.blackjack.SuitTest" time="0.033"/>
+  <testcase name="heartPrintsHeart()" classname="com.jalal.blackjack.SuitTest" time="0.053"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
