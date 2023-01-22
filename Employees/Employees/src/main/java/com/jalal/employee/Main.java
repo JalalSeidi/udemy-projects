@@ -41,7 +41,10 @@ public class Main {
           String details = peopleMat.group("details");
           Matcher coderMat = coderPat.matcher(details);
           if (coderMat.find()) {
-                System.out.printf("programmer loc: %s yoe: %s iq: %s%n", coderMat.group("locpd"), coderMat.group("yoe"), coderMat.group("iq"));
+            int locpd = Integer.parseInt(coderMat.group("locpd"));
+            int yoe = Integer.parseInt(coderMat.group("yoe"));
+            int iq = Integer.parseInt(coderMat.group("iq"));
+            System.out.printf("programmer loc: %s yoe: %s iq: %s%n", locpd, yoe, iq);
           }
           yield 3000;
         }
