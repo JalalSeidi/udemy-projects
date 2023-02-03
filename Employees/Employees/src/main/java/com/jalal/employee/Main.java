@@ -47,6 +47,7 @@ public class Main {
     while ( peopleMat.find()) {
       totalSalaries+= switch (peopleMat.group("role")) {
         case "Programmer" -> {
+          Programmer programmer = new Programmer(peopleMat.group());
           String details = peopleMat.group("details");
           Matcher coderMat = coderPat.matcher(details);
           int salary = 0;
