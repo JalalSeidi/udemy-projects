@@ -45,6 +45,6 @@ public class Programmer {
 
   @Override
   public String toString() {
-    return String.format("%s, %s: %s", lastName, firstName);
+    return String.format("%s, %s: %s", lastName, firstName, moneyFormat.format(getSalary()));
   }
 }
