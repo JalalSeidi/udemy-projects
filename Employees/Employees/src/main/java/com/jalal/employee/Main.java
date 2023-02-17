@@ -52,25 +52,15 @@ public class Main {
           yield programmer.getSalary();
         }
         case "Manger" ->  {
-//         
+//
           Manager manager = new Manager(peopleMat.group());
           System.out.println(manager.toString());
           yield manager.getSalary();
         }
         case "Analyst" -> {
-          String details = peopleMat.group("details");
-          Matcher analystMat = analystPat.matcher(details);
-          int salary = 0;
-          if (analystMat.find()) {
-            int projectCount = Integer.parseInt(analystMat.group("projectCount"));
-            salary = 2500 + projectCount * 2;
-          } else {
-            salary = 2500;
-          }
-          String firstName = peopleMat.group("firstName");
-          String lastName = peopleMat.group("lastName");
-          System.out.printf("%s, %s: %s%n", lastName, firstName, NumberFormat.getCurrencyInstance().format(salary));
-          yield salary;
+          Analyst analyst = new Analyst(peopleMat.group());
+          System.out.println(analyst.toString());
+          yield analyst.getSalary();
         }
         case "CEO" -> {
           String details = peopleMat.group("details");
