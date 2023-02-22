@@ -6,11 +6,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Programmer implements Employee {
+public class Programmer extends Employee {
 
-  private String lastName;
-  private String firstName;
-  private LocalDate dob;
   private int linesOfCode = 0;
   private int yearsOfExp = 0;
   private int iq = 0;
