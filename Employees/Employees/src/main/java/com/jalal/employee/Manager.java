@@ -1,8 +1,5 @@
 package com.jalal.employee;
 
-import java.text.NumberFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,23 +13,15 @@ public class Manager extends Employee {
   private final Pattern mgrPat = Pattern.compile(mgrRegex);
   private final String peopleRegex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}), \\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})?\\n";
   private final Pattern peoplePat = Pattern.compile(peopleRegex);
-  private final DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
-  private final NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
-
 
   public Manager(String personText) {
-    Matcher peopleMat = peoplePat.matcher(personText);
-    if (peopleMat.find()) {
-      this.lastName = peopleMat.group("lastName");
-      this.firstName = peopleMat.group("firstName");
-      this.dob = LocalDate.from(dtFormatter.parse(peopleMat.group("dob")));
+    super(personText);
       Matcher mgrMat = mgrPat.matcher(peopleMat.group("details"));
       if (mgrMat.find()) {
         this.orgSize = Integer.parseInt(mgrMat.group("locpd"));
         this.directReports = Integer.parseInt(mgrMat.group("yoe"));
 
       }
-    }
   }
   public int getSalary() {
     return 3500 + orgSize *directReports;
