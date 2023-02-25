@@ -24,7 +24,7 @@ public class Manager extends Employee {
       }
   }
   public int getSalary() {
-    return 3500 + orgSize *directReports;
+    return 3500 + orgSize * directReports;
   }
 
   @Override
