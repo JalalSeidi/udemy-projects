@@ -33,13 +33,14 @@ public class Main {
     Employee employee = null;
     while ( peopleMat.find()) {
 
-      employee = switch (peopleMat.group("role")) {
-        case "Programmer" -> new Programmer(peopleMat.group());
-        case "Manger" -> new Manager(peopleMat.group());
-        case "Analyst" -> new Analyst(peopleMat.group());
-        case "CEO" -> new CEO(peopleMat.group());
-        default -> null;
-      };
+      employee = Employee.createEmployee(peopleMat.group());
+//              switch (peopleMat.group("role")) {
+//        case "Programmer" -> new Programmer(peopleMat.group());
+//        case "Manger" -> new Manager(peopleMat.group());
+//        case "Analyst" -> new Analyst(peopleMat.group());
+//        case "CEO" -> new CEO(peopleMat.group());
+//        default -> null;
+//      };
       if (employee != null) {
         System.out.println(employee.toString());
         totalSalaries += employee.getSalary();

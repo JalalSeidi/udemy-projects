@@ -27,23 +27,28 @@ public abstract class Employee {
 
   public static final Employee createEmployee(String employeeText) {
     Matcher peopleMat = Employee.peoplePat.matcher(employeeText);
-    return switch (peopleMat.group("role")) {
-      case "Programmer" -> new Programmer(peopleMat.group());
-      case "Manger" -> new Manager(peopleMat.group());
-      case "Analyst" -> new Analyst(peopleMat.group());
-      case "CEO" -> new CEO(peopleMat.group());
-      default -> null;
-    };
+    if (peopleMat.find()) {
+      return switch (peopleMat.group("role")) {
+        case "Programmer" -> new Programmer(employeeText);
+        case "Manger" -> new Manager(employeeText);
+        case "Analyst" -> new Analyst(employeeText);
+        case "CEO" -> new CEO(employeeText);
+        default -> null;
+      };
+    } else {
+      return null;
+    }
   }
 
-  public abstract int getSalary();
+    public abstract int getSalary ();
 
-  public double getBonus() {
-    return getSalary() * 1.10;
+    public double getBonus () {
+      return getSalary() * 1.10;
+    }
+
+    @Override
+    public String toString () {
+      return String.format("%s, %s: %s - %s", lastName, firstName, moneyFormat.format(getSalary()), moneyFormat.format(getBonus()));
+    }
   }
 
-  @Override
-  public String toString() {
-    return String.format("%s, %s: %s - %s", lastName, firstName, moneyFormat.format(getSalary()), moneyFormat.format(getBonus()));
-  }
-}
