@@ -3,20 +3,28 @@ public class PracticingArraysAndLoops {
   public static void main(String[] args) {
     String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     for (String day : days) {
-      if ("Sunday".equals(day)) {
+      switch (day) {
+        case "Sunday":
         System.out.println("We eat pot roast on Sunday");
-      } else if ("Monday".equals(day)) {
+        break;
+        case "Monday":
         System.out.println("We eat spaghetti on Monday");
-      } else if ("Tuesday".equals(day)) {
+        break;
+        case "Tuesday":
         System.out.println("We eat tacos on Tuesday");
-      } else if ("Wednesday".equals(day)) {
+        break;
+        case "Wednesday":
         System.out.println("We eat chicken on Wednesday");
-      } else if ("Thursday".equals(day)) {
+        break;
+        case "Thursday":
         System.out.println("We eat meatloaf on Thursday");
-      } else if ("Friday".equals(day)) {
+        break;
+        case "Friday":
         System.out.println("We eat hamburgers on Friday");
-      } else { // technically, no need for another "else if" since there's only one remaining option
+        break;
+        default: // technically, no need for another "else if" since there's only one remaining option
         System.out.println("We eat pizza on Saturday");
+        break;
       }
     }
   }
